@@ -6,7 +6,6 @@ import { BsCupHot } from "react-icons/bs";
 import { FaWind, FaSitemap } from "react-icons/fa6";
 export default function Truck({
   item: {
-    // id,
     name,
     price,
     rating,
@@ -22,12 +21,12 @@ export default function Truck({
 }) {
   const features = [
     {
-      icon: <FaSitemap />,
+      icon: <FaSitemap width={20} height={20} />,
       name: transmission === "automatic" ? "Automatic" : "Manual",
       value: transmission,
     },
     {
-      icon: <FaGasPump />,
+      icon: <FaGasPump width={20} height={20} />,
       name:
         engine === "petrol"
           ? "Petrol"
@@ -36,8 +35,12 @@ export default function Truck({
           : "Hybrid",
       value: engine,
     },
-    { icon: <BsCupHot />, name: "Kitchen", value: kitchen },
-    { icon: <FaWind />, name: "AC", value: AC },
+    {
+      icon: <BsCupHot width={20} height={20} />,
+      name: "Kitchen",
+      value: kitchen,
+    },
+    { icon: <FaWind width={20} height={20} />, name: "AC", value: AC },
   ];
 
   const filteredFeatures = features.filter((feature) => feature.value);
@@ -58,11 +61,15 @@ export default function Truck({
 
         <div className={css.ratingLocation}>
           <span className={css.rating}>
-            <AiFillStar className={css.starIcon} />
+            <AiFillStar width={20} height={20} className={css.starIcon} />
             {rating} ({reviews.length} Reviews)
           </span>
           <span className={css.location}>
-            <FaMapLocationDot className={css.locationIcon} />
+            <FaMapLocationDot
+              width={20}
+              height={20}
+              className={css.locationIcon}
+            />
             {location}
           </span>
         </div>

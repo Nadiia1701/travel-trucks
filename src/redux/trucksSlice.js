@@ -1,8 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchTrucksList } from "./trucksOps";
+import { fetchTrucksList, fetchTruckById } from "./trucksOps";
 
 const handlePending = (state) => {
-    state.isLoading = true;
+  state.isLoading = true;
 };
 
 const handleRejected = (state, action) => {
@@ -16,6 +16,7 @@ const trucksSlice = createSlice({
   name: "trucks",
   initialState: {
     items: [],
+    selectedItem: {},
     isLoading: false,
     error: null,
     page: 1,
@@ -42,7 +43,19 @@ const trucksSlice = createSlice({
         state.total = action.payload.total;
         state.hasNextPage = state.items.length < state.total;
       })
-      .addCase(fetchTrucksList.rejected, handleRejected);
+      .addCase(fetchTrucksList.rejected, handleRejected)
+
+      .addCase(fetchTruckById.pending, handlePending)
+      .addCase(fetchTruckById.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.errorTruck = null;
+        state.selectedItem = action.payload;
+      })
+      .addCase(fetchTruckById.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload;
+        state.selectedItem = {};
+      });
   },
 });
 

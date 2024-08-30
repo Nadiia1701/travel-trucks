@@ -12,7 +12,7 @@ export default function TrucksList() {
       {items.map((item, index) => (
         <li key={`${item.id}-${index}`}>
           <Truck item={item} />
-          <Link className={css.viewLink} to={`/catalog/:id`}>
+          <Link className={css.viewLink} to={`/catalog/${item.id}`}>
             Show more
           </Link>
         </li>
