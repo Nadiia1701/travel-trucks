@@ -11,7 +11,7 @@ const TrucksPage = lazy(() => import("../pages/TrucksPage/TrucksPage"));
 const TruckDetailsPage = lazy(() =>
   import("../pages/TruckDetailsPage/TruckDetailsPage")
 );
-const TruckFeatures = lazy(() => import("./TruckFeatures/TruckFeatures"));
+const TruckAddInfo = lazy(() => import("./TruckAddInfo/TruckAddInfo"));
 const TruckReviews = lazy(() => import("./TruckReviews/TruckReviews"));
 
 export default function App() {
@@ -25,7 +25,8 @@ export default function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/catalog" element={<TrucksPage />} />
           <Route path="/catalog/:id" element={<TruckDetailsPage />}>
-            <Route path="features" element={<TruckFeatures />} />
+            <Route index element={<TruckAddInfo />} />
+            <Route path="features" element={<TruckAddInfo />} />
             <Route path="reviews" element={<TruckReviews />} />
           </Route>
           <Route path="*" element={<NotFoundPage />} />
