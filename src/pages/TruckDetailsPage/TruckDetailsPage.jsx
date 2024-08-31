@@ -3,16 +3,23 @@ import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { fetchTruckById } from "../../redux/trucksOps.js";
-import { selectTruck, selectError } from "../../redux/selectors.js";
+import {
+  selectTruck,
+  selectError,
+  selectIsLoading,
+} from "../../redux/selectors.js";
 import TruckInfo from "../../components/TruckInfo/TruckInfo.jsx";
 import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
 import Loader from "../../components/Loader/Loader";
+import TruckDetails from "../../components/TruckDetails/TruckDetails.jsx";
+import BookForm from "../../components/BookForm/BookForm.jsx";
 
 export default function TruckDetailsPage() {
   const { id } = useParams();
   const dispatch = useDispatch();
   const item = useSelector(selectTruck);
   const error = useSelector(selectError);
+  const isLoading = useSelector(selectIsLoading);
 
   useEffect(() => {
     if (id) {
@@ -20,14 +27,23 @@ export default function TruckDetailsPage() {
     }
   }, [id, dispatch]);
 
-  if (!item.name) {
+  if (isLoading) {
     return <Loader />;
+  }
+
+  if (error) {
+    return <ErrorMessage />;
+  }
+
+  if (!item || !item.name) {
+    return <div>No data available</div>;
   }
 
   return (
     <div className={css.container}>
-      {error && <ErrorMessage />}
       <TruckInfo item={item} />
+      <TruckDetails item={item} />
+      <BookForm />
     </div>
   );
 }

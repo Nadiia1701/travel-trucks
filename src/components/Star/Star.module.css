@@ -1,0 +1,13 @@
+/* Star.module.css */
+.container {
+    display: flex;
+    align-items: center;
+}
+
+.filledStar {
+    color: gold;
+}
+
+.emptyStar {
+    color: gray;
+}
