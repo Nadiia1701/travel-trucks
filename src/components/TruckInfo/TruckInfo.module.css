@@ -1,0 +1,89 @@
+.gallery {
+    display: flex;
+    gap: 48px;
+    flex-wrap: wrap;
+    margin-bottom: 28px;
+}
+
+.image {
+    width: 292px;
+    height: 312px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.details {
+    margin-top: 40px;
+}
+
+.title {
+    color: var(--Main, #101828);
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 32px;
+    overflow: hidden;
+}
+
+.price {
+    color: var(--Main, #101828);
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 32px;
+}
+
+.ratingLocation {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.rating {
+    color: var(--Main, #101828);
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.starIcon {
+    color: gold;
+    width: 16px;
+    height: 16px;
+    position: relative;
+    top: -1.5px;
+}
+
+.location {
+    color: var(--Main, #101828);
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.locationIcon {
+    color: #949494;
+}
+
+.description {
+    color: var(--Text, #475467);
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    margin-bottom: 60px;
+}

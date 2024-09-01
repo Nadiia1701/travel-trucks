@@ -9,7 +9,12 @@ const buildLinkClass = ({ isActive }) => {
 export default function Navigation() {
   return (
     <header className={css.header}>
-      <nav className={css.nav}>
+      <div className={css.logo}>
+        <p className={css.travel}>
+          Travel<span className={css.trucks}>Trucks</span>
+        </p>
+      </div>
+      <nav className={css.navLink}>
         <NavLink to="/" className={buildLinkClass}>
           Home
         </NavLink>

@@ -9,6 +9,7 @@ import {
 } from "../../redux/selectors.js";
 import Loader from "../Loader/Loader.jsx";
 import ErrorMessage from "../ErrorMessage/ErrorMessage.jsx";
+import BookForm from "../../components/BookForm/BookForm.jsx";
 
 export default function TruckDescription() {
   const item = useSelector(selectTruck);
@@ -17,7 +18,7 @@ export default function TruckDescription() {
   const { id } = useParams();
 
   return (
-    <div className={css.container}>
+    <div>
       {error && <ErrorMessage />}
       {isLoading && <Loader />}
       <div className={css.links}>
@@ -39,7 +40,10 @@ export default function TruckDescription() {
         </div>
       </div>
       <Suspense fallback={<Loader />}>
-        <Outlet item={item} />
+        <div className={css.container}>
+          <Outlet item={item} />
+          <BookForm />
+        </div>
       </Suspense>
     </div>
   );

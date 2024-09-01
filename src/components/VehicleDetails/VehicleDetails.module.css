@@ -10,6 +10,7 @@
 
 .listItem {
     display: flex;
+    width: 588px;
     justify-content: space-between;
     padding: 8px 0;
 }

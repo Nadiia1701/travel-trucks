@@ -2,7 +2,6 @@ import { Suspense, lazy } from "react";
 import { Routes, Route } from "react-router-dom";
 import NotFoundPage from "../pages/NotFoundPage/NotFoundPage";
 import Navigation from "./Navigation/Navigation";
-import Logo from "./Logo/Logo";
 import Loader from "./Loader/Loader";
 import css from "./App.module.css";
 
@@ -17,7 +16,6 @@ const TruckReviews = lazy(() => import("./TruckReviews/TruckReviews"));
 export default function App() {
   return (
     <div className={css.container}>
-      <Logo />
       <Navigation />
 
       <Suspense fallback={<Loader />}>

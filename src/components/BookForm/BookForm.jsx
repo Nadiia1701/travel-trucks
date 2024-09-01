@@ -15,8 +15,10 @@ const validationSchema = Yup.object({
 export default function BookForm() {
   return (
     <div className={css.formContainer}>
-      <h2>Book your campervan now</h2>
-      <p>Stay connected! We are always ready to help you.</p>
+      <h2 className={css.title}>Book your campervan now</h2>
+      <p className={css.text}>
+        Stay connected! We are always ready to help you.
+      </p>
 
       <Formik
         initialValues={{ name: "", email: "", bookingDate: "", comment: "" }}
@@ -24,7 +26,7 @@ export default function BookForm() {
         onSubmit={(values, { setSubmitting }) => {
           console.log(values);
           setSubmitting(false);
-          // Здесь можно добавить логику для отправки данных
+          // Логику для отправки данных
         }}
       >
         {({ isSubmitting }) => (

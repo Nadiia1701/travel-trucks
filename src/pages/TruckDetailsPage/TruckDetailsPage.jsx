@@ -12,7 +12,6 @@ import TruckInfo from "../../components/TruckInfo/TruckInfo.jsx";
 import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
 import Loader from "../../components/Loader/Loader";
 import TruckDetails from "../../components/TruckDetails/TruckDetails.jsx";
-import BookForm from "../../components/BookForm/BookForm.jsx";
 
 export default function TruckDetailsPage() {
   const { id } = useParams();
@@ -43,7 +42,6 @@ export default function TruckDetailsPage() {
     <div className={css.container}>
       <TruckInfo item={item} />
       <TruckDetails item={item} />
-      <BookForm />
     </div>
   );
 }

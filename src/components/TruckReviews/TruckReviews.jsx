@@ -10,8 +10,10 @@ export default function TruckReviews() {
       <div className={css.wrapper}>
         {item.reviews
           ? item.reviews.map((item, index) => (
-              <div key={index} className={css.avatar}>
-                <p>{item.reviewer_name.charAt(0).toUpperCase()}</p>
+              <div key={index} className={css.wrapper}>
+                <p className={css.avatar}>
+                  {item.reviewer_name.charAt(0).toUpperCase()}
+                </p>
                 <div className={css.nameStar}>
                   <p className={css.name}>{item.reviewer_name}</p>
                   <Star count={item.reviewer_rating} />

@@ -4,8 +4,11 @@ import { FaMapLocationDot } from "react-icons/fa6"; // Іконка для ло�
 import { FaGasPump } from "react-icons/fa";
 import { BsCupHot } from "react-icons/bs";
 import { FaWind, FaSitemap } from "react-icons/fa6";
+import { Link } from "react-router-dom";
+
 export default function Truck({
   item: {
+    id,
     name,
     price,
     rating,
@@ -57,7 +60,10 @@ export default function Truck({
       <img src={gallery[0].thumb} alt={name} className={css.image} />
 
       <div className={css.details}>
-        <h2 className={css.title}>{name}</h2>
+        <div className={css.nameContainer}>
+          <h2 className={css.title}>{name}</h2>
+          <p className={css.price}>€{price.toFixed(2)}</p>
+        </div>
 
         <div className={css.ratingLocation}>
           <span className={css.rating}>
@@ -73,6 +79,7 @@ export default function Truck({
             {location}
           </span>
         </div>
+
         <p className={css.description}>{truncateText(description, 60)}</p>
 
         <div className={css.features}>
@@ -82,8 +89,10 @@ export default function Truck({
             </span>
           ))}
         </div>
+        <Link className={css.viewMoreBtn} to={`/catalog/${id}`}>
+          Show more
+        </Link>
       </div>
-      <div className={css.price}>€{price.toFixed(2)}</div>
     </div>
   );
 }

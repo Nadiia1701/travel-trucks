@@ -1,17 +1,28 @@
 .features {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 8px;
+    width: 588px;
+    margin-bottom: 24px;
 }
 
 .feature {
     display: flex;
     align-items: center;
-    background-color: #f7f8fa;
-    border-radius: 20px;
-    padding: 5px 15px;
-    font-size: 14px;
-    color: #333;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 18px;
+    width: calc((100%-24px)/3);
+    border-radius: 100px;
+    background: var(--Badges, #f2f4f7);
+    mix-blend-mode: multiply;
+    color: var(--Main, #101828);
+    text-align: center;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
 }
 
 .feature svg {

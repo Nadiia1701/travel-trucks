@@ -1,0 +1,67 @@
+.header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    padding: 24px 64px;
+    border-bottom: 1px solid var(--Badges, #f2f4f7);
+    background: var(--Inputs, #f7f7f7);
+}
+
+.logo {
+    position: relative;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 64px;
+    top: 32px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.travel {
+    color: #181818;
+}
+
+.trucks {
+    color: grey;
+}
+
+.navLink {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 10px;
+    color: var(--Main, #101828);
+}
+
+.link {
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    color: #333;
+    text-decoration: none;
+    padding: 0.5rem 0;
+    position: relative;
+    transition: color 0.3s;
+}
+
+.link:hover {
+    color: #ff4b5c;
+}
+
+.active {
+    color: var(--Button-Hover, #d84343);
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+}
